@@ -57,7 +57,6 @@ class Employee {
             console.log(`${this.firstName} does not have that much energy! ${this.firstName} will work for ${this.energyHours} hours instead.`);
             hours = this.energyHours;
             this.energyHours = 0;
-
             //console.log("This employee can't work for this many hours at the moment!");
             //return;
         } else {
