@@ -1,5 +1,5 @@
 const fs = require("fs");
-// holds the terminal's command;s arguments. THESE ARE NOT FUNCTION ARGUMENTS.
+// holds the terminal's command's arguments. THESE ARE NOT FUNCTION ARGUMENTS.
 process.argv;
 
 console.log(process.argv);
@@ -9,7 +9,7 @@ console.log(process.argv);
 // Any GRUD operations WILL NOT ask for permission to create/delete files. 
 
 // Create a file using Node FS module
-// REPLACES exist files with same name, deleting old content.
+// REPLACES existing files with same name, deleting old content.
 fs.writeFileSync("new_file.txt", "Hello World!", "utf-8");
 
 
