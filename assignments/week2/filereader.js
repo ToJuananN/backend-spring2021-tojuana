@@ -54,6 +54,7 @@ if(action === "read") {
         fs.writeFileSync(filename, "", "utf-8");
     console.log("Finished writing the file: " + filename);
     } 
+
 }else if (action === "update"){
 
     if(fs.existsSync(filename)){
@@ -74,6 +75,7 @@ if(action === "read") {
         } else{
             console.log("Are you sure you want to delete this file? Keep in mind this file will be PERMENENTLY deleted and not moved to the Recycling bin or the trash. Please run the command again with the word true as the final argument");
         }
+
     }else{
         console.log("There is no file with that name, please double check your argument. ")
     }
@@ -93,10 +95,22 @@ if(action === "read") {
         }
     }else {
         console.log("Sorry but one of your files that you chose does not exist! Please double check you spelling.");
+      // node filereader.js copy originalFile newFile  
     }else if(action === "copy"){
-
-        // node filereader.js copy originalFile newFile
-
+        if(fs.existsSync(filename)) {
+            if (filname === "") {
+                console.log("Please enter a file to be copied.");
+            } else if (contents === filename) {
+                console.log(`${filename} already exisit, Please choose a different name.`)
+            } else {
+                fs.copyFileSync(filename, contents);
+                console.log("Copy is made.")
+            }
+        } else {
+            console.log {
+                console.log(`${filename} does not exist.`)
+            }
+        }
     }else {
         console.log(`There is no action by that name. Please double check your spelling. The available actions for thes script are: read, write, update, delete, merge, and copy.
         Welcome to my file reader! Please provide the file name you want to use after the command.
@@ -110,7 +124,7 @@ if(action === "read") {
         `);
     }
 
-}
+
 
 
 
