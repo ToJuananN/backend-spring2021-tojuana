@@ -77,7 +77,7 @@ if(action === "read") {
         }
 
     }else{
-        console.log("There is no file with that name, please double check your argument. ")
+        console.log("There is no file with that name, please double check your argument. ");
     }
     
 } else if(action === "merge") {
@@ -95,6 +95,7 @@ if(action === "read") {
         }
     }else {
         console.log("Sorry but one of your files that you chose does not exist! Please double check you spelling.");
+    }
       // node filereader.js copy originalFile newFile  
     }else if(action === "copy"){
         if(fs.existsSync(filename)) {
@@ -123,8 +124,6 @@ if(action === "read") {
         Delete a file: node.filereader.js delete myFile.txt true
         `);
     }
-
-
 
 
 
