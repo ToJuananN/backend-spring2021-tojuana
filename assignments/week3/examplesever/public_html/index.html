@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>Welcome to my Website!</h1>
-    <p><a href="http://localhost:3000/secretwebsit"></a></p>
+    <p><a href="/secretwebsite"> Click here to go to my secret website.</a></p>
 
     <form>
         <label for="number">Type a number in</label>
@@ -21,14 +21,24 @@
         <button>Send the Number!</button>
     </form>
 
+    <p id="results"></p> 
+
     <script>
+        const baseURL = "http://localhost:3000";
 
         $(function () {
 
             $("button").click(function (event) {
                 event.preventDefault();
+
+                let objectToSend = {
+                    message: "hello"
+                };
+
                 // jQuery POST request
-                $.post("http://localhost:3000/submitNumber", "Hello", function (response) {
+                $.post(baseURL + "/submitNumber", objectToSend, function (response) {
+                
+                    $("#results").text(response);
                     console.log("The server has responded!");
                 });
             });
